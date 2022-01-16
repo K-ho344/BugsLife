@@ -1,4 +1,7 @@
-﻿@{
+﻿@using System;
+@using System.IO;
+@using System.Collections;
+@{
     ViewData["Title"] = "MainPage";
 }
 <div class="right-left-container">
@@ -20,6 +23,16 @@
     <div class="right-container">
         <div class="thumbnail-list-area">
             <p>サムネイル一覧を表示するエリア</p>
+            <div class="thumbnails">
+                @{
+                    string path = @".\img\";
+                    string[] ThumbnailPics = Directory.GetFiles(path);
+                }
+                @foreach (var pic in ThumbnailPics)
+                {
+                    <img src=@pic alt="サムネイル画像" />
+                }
+            </div>
         </div>
     </div>
 </div>
