@@ -9,11 +9,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\img\SpeechBalloon.png" />
+    <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\MainPage\img\" />
+    <None Include="wwwroot\img\P8010247.JPG" />
+    <None Include="wwwroot\img\P8010256.JPG" />
+    <None Include="wwwroot\img\P8010257.JPG" />
+    <None Include="wwwroot\img\P8010289.JPG" />
+    <None Include="wwwroot\img\P8090037.JPG" />
+    <None Include="wwwroot\img\P8090056.JPG" />
+    <None Include="wwwroot\img\P9200039.JPG" />
+    <None Include="wwwroot\img\PA090027.JPG" />
+    <None Include="wwwroot\img\PA090054.JPG" />
+    <None Include="wwwroot\img\PA090231.JPG" />
+    <None Include="wwwroot\img\PA090251.JPG" />
+    <None Include="wwwroot\img\PA090309.JPG" />
+    <None Include="wwwroot\img\PA090367.JPG" />
+    <None Include="wwwroot\img\PA090476.JPG" />
+    <None Include="wwwroot\img\PA140090.JPG" />
   </ItemGroup>
 
 </Project>

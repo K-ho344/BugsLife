@@ -25,7 +25,7 @@
             <p>サムネイル一覧を表示するエリア</p>
             <div class="thumbnails">
                 @{
-                    string path = @".\img\";
+                    string path = "~/img/";
                     string[] ThumbnailPics = Directory.GetFiles(path);
                 }
                 @foreach (var pic in ThumbnailPics)
