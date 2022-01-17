@@ -22,17 +22,17 @@
     </div>
     <div class="right-container">
         <div class="thumbnail-list-area">
-            <p>サムネイル一覧を表示するエリア</p>
-            <div class="thumbnails">
-                @{
-                    string path = "~/img/";
-                    string[] ThumbnailPics = Directory.GetFiles(path);
-                }
-                @foreach (var pic in ThumbnailPics)
-                {
-                    <img src=@pic alt="サムネイル画像" />
-                }
-            </div>
-        </div>
+            @{
+                string path = @".\wwwroot\img\";
+                string[] ThumbnailPics = Directory.GetFiles(path);
+            }
+            @foreach (var pic in ThumbnailPics)
+            {
+                string PicPath = "." + pic[9..]; //相対パスから"wwwroot"を切り抜いた文字列
+                <div class="thumbnails">
+                    <img src=@PicPath alt="サムネイル画像" />
+                </div>
+            }
+         </div>
     </div>
 </div>
