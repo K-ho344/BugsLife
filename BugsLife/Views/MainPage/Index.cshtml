@@ -1,6 +1,7 @@
 ﻿@using System;
 @using System.IO;
 @using System.Collections;
+@using System.Drawing;
 @{
     ViewData["Title"] = "MainPage";
 }
@@ -97,13 +98,22 @@
             @{
                 string path = @".\wwwroot\img\";
                 string[] ThumbnailPics = Directory.GetFiles(path);
+                int PicsFileNameNum = 0; //foreach文内でインクリメントしてサムネイル画像のファイル名に使用する
             }
             @foreach (var pic in ThumbnailPics)
             {
-                string PicPath = "." + pic[9..]; //相対パスから"wwwroot"を切り抜いた文字列
+                string PicPath = "." + pic;
+            <p>@PicPath</p>
+                Bitmap OrgBitmap = new Bitmap(Image.FromFile(PicPath));
+                Bitmap ResizedBitmap = new Bitmap(OrgBitmap, new Size(100, 100));
+                string SavePath = @".\wwwroot\img_resized";
+                string BitmapFileName = PicsFileNameNum + ".bmp";
+                string BitmapFullPath = SavePath + "\\"+BitmapFileName;
+                ResizedBitmap.Save(BitmapFullPath);
                 <div class="thumbnails">
                     <img src=@PicPath alt="サムネイル画像" />
                 </div>
+                PicsFileNameNum++;
             }
          </div>
     </div>
